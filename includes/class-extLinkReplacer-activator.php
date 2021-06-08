@@ -56,6 +56,7 @@ class extLinkReplacer_Activator
             'postType' => ['post'],
             'download' => '',
             'delete' => '',
+            'optimize' => '',
             'width' => '1024',
             'height' => '924',
             'quality' => '75',

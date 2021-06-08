@@ -35,6 +35,13 @@ In the next version the plugin will be able to recognize temporary google image 
 == Changelog ==
 
 = 5.0 =
-* Stable version
+
+* Полностю переработан под restApi wp;
+* Фикс глобальных ошибок связанных с картинками data:image;
+* Переписана полностью логика.
+
+= 5.0.1 =
+* Исправлена ошибка когда нет библиотеки Imagick и валился скан постов, что бы не крашилось, надо выключить опцию оптимизации которая описана ниже;
+* Добавлена опция для выключения оптимизация картинок.
 
 `<?php code(); // goes in backticks ?>`

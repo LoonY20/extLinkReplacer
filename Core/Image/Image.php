@@ -12,7 +12,7 @@ abstract class Image
     public $attachmentId;
     public $imageSize = 0;
     public $newSize = 0;
-    public $errorMassage = '';
+	public $errorMassage = '';
 
 
     protected $path;
@@ -35,27 +35,36 @@ abstract class Image
 
     protected function necessarilyCompressImage(string $path)
     {
-        $compress = new ImagickCompress();
-        $compress->compress($path);
+        $options = new \Options();
+        if ( $options->getOption( 'optimize' ) === 'on' ) {
+            $compress = new ImagickCompress();
+            $compress->compress($path);
 
-        clearstatcache($path);
-        return filesize($path);
+            clearstatcache($path);
+            return filesize($path);
+        } else {
+            return 'Ужатие выключено';
+        }
     }
 
     protected function optionalCompressImage(string $path)
     {
 
         $options = new \Options();
-        if ($this->imageWidth > $options->getOption('width') || $this->imageHeight > $options->getOption('height')) {
+        if ( $options->getOption( 'optimize' ) === 'on' ) {
+            if ($this->imageWidth > $options->getOption('width') || $this->imageHeight > $options->getOption('height')) {
 
-            $compress = new ImagickCompress();
-            if ($this->imageSize > $options->getOption('maxSize')) {
-                $compress->compress($path);
+                $compress = new ImagickCompress();
+                if ($this->imageSize > $options->getOption('maxSize')) {
+                    $compress->compress($path);
+                }
+
             }
-
+            clearstatcache($path);
+            return filesize($path);
+        } else {
+            return 'Ужатие выключено';
         }
-        clearstatcache($path);
-        return filesize($path);
 
 
     }

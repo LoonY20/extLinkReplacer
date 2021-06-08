@@ -30,6 +30,7 @@ class Options
         $option = [
             'postType' => $_POST['postType'],
             'download' => $_POST['download'],
+            'optimize' => $_POST['optimize'],
             'delete' => $_POST['delete'],
             'width' => $_POST['width'],
             'height' => $_POST['height'],
