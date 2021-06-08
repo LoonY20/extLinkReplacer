@@ -1,0 +1,105 @@
+.yanina h1 {
+    text-align: center;
+}
+.yanina .column-id {
+    width: 4em;
+}
+
+.yanina .failed-operation,
+.yanina .success-operation {
+    display: none;
+}
+
+.yanina .wp-list-table {
+    margin-top: 20px;
+}
+
+
+.yanina .infoBlock {
+    display: flex;
+    flex-direction: column;
+}
+
+.yanina td,
+.yanina th {
+    text-align: center;
+}
+.yanina #options td,
+.yanina #options th {
+    text-align: left;
+    padding: 10px 5px;
+}
+
+.yanina .row {
+
+    display: flex;
+
+}
+
+.yanina .row.between {
+    justify-content: space-between;
+}
+
+.yanina .imagickAlert {
+
+    width: 650px;
+    margin: 0 auto;
+    color: red;
+    font-size: 18px;
+
+}
+
+.yanina .load-field {
+    position: fixed;
+    width: calc( 100% + 20px );
+    display: none;
+    background: rgba(0, 0, 0, 0.35);
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+.yanina .lds-ring {
+    display: inline-block;
+    position: absolute;
+    left: calc(50% - 80px);
+    top: calc(50vh - 80px);
+    width: 80px;
+    height: 80px;
+
+
+}
+.yanina .lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid;
+    border-color: #fff transparent transparent transparent;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+.yanina .lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+.yanina .lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+.yanina .lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.success-operation {
+    color: #00a32a;
+    text-align: center;
+}
